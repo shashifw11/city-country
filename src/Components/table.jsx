@@ -1,5 +1,5 @@
 import {useState,useEffect} from "react" ; 
-import axios from "axios" ; 
+import axios from "axios" ;  
 import "./table.css" 
 import {v4 as uuid} from "uuid" ; 
 export const Table = ()=>{
@@ -7,7 +7,7 @@ export const Table = ()=>{
       //console.log(data)
 
       useEffect(() => {
-        axios.get(" http://localhost:3001/country").then((res)=>{
+        axios.get(" http://localhost:8080/country").then((res)=>{
         //   console.log(res.data)
           setData(res.data)
         }).catch((e)=>{
@@ -17,7 +17,7 @@ export const Table = ()=>{
       }, []);
 
       const myfun= (asd)=>{
-        console.log(asd);
+        // console.log(asd);
          data.sort((a,b)=>{
              if(a.population>b.population) return asd ?1 : -1
               else 
